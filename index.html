@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+        <title>Polymer 3 Homepage</title>
+        <meta name="description" content="Polymer 3 Getting started">
+        <base href="/">
+        <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+        <!--MODULES-->
+        <script type="module" src="src/components/thumbnail-link.js"></script>
+        <script type="module" src="src/components/search-ddg.js"></script>
+        <!--STYLES-->
+        <!--       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
+        -->
+        <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.css"></link>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>                        
+        <style>
+            .column{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .row{
+                width: 50em;
+            }
+            body{
+                background: #fafafa;
+                --my-theme-color: #344152;
+                --my-light-theme-color: #8491c2;
+            }
+            .drag{
+                opacity: 0.25;
+            }
+            .over{
+                background-color: green;
+            }
+        </style>
+            <!--
+            [draggable="true"]{
+                moz-user-select: none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+                khtml-user-drag: element;
+                -webkit-user-drag: element;
+            }
+            -->
+        <script>
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+/*
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.insertAdjacentElement('afterend',document.getElementById(data));
+            }
+*/
+            var dragStart = function(e){
+                try {
+                    e.dataTransfer.setData('text/plain',e.target.id);
+                } catch (ex) {
+                    e.dataTransfer.setData('Text',e.target.id);
+                }
+            };
+var dropped = function(e){
+    var id;
+    cancel(e);
+//    if (this.id !== sourceContainerId) {
+        try{
+            id=e.dataTransfer.getData('text/plain');
+        } catch(ex){
+            id=e.dataTransfer.getData('Text');
+        }
+            e.target.insertAdjacentElement('afterend',document.querySelector('#'+id));
+  //  }
+};
+var dragover = function(e){
+    e.preventDefault()
+    e.target.style.boxShadow= "4px 0px rgba(80,80,200,.3)";
+}
+var dragleave = function(e){
+    e.preventDefault()
+    e.target.style.boxShadow= "0px 0px rgba(80,80,200,.3)";
+}
+var cancel = function(e){
+    if (e.preventDefault) e.preventDefault();
+    if (e.stopPropagation) e.stopPropagation();
+    return false;
+};
+/*
+  */          
+        </script>
+	</head>
+    <body>
+        <main>
+            <div class="column">
+                <div class="row" id="div1" ondrop="dropped(event)" ondragover="allowDrop(event)" data-role="drag-drop-target">
+                    <thumbnail-link id="t1" class="col s4" link="https://www.polymer-project.org">Polymer Project</thumbnail-link>
+                    <thumbnail-link id="t2" class="col s4" link="https://www.pluralsight.com">Pluralsight</thumbnail-link>
+                    <thumbnail-link id="t3" class="col s4" link="https://www.coursera.org">Coursera</thumbnail-link>
+                    <thumbnail-link id="t4" class="col s4" link="https://www.github.com">Github.com</thumbnail-link>
+                    <thumbnail-link id="t5" class="col s4" link="https://www.lucentmonkey.com">lucentmonkey.com</thumbnail-link>
+                    <thumbnail-link id="t6" class="col s4" link="https://www.udemy.com">udemy.com</thumbnail-link>
+                </div>
+                <div class="row">
+                    <search-ddg></search-ddg>
+                </div>
+            </div>
+        </main>
+        <script>
+            var container = document.querySelector('#div1')
+            var targets= document.querySelectorAll('[data-role="drag-drop-target"]');
+            var targets= document.querySelectorAll('thumbnail-link');
+
+            [].forEach.call(targets, function(target){
+                    target.addEventListener('dragstart', dragStart, false);
+                    target.addEventListener('dragenter', cancel, false);
+                    target.addEventListener('dragover', dragover, false);
+                    target.addEventListener('dragleave', dragleave, false);
+                    target.addEventListener('drop', dropped, false);
+                    target.setAttribute("draggable","true");
+                })
+            </script>
+	</body>
+</html>
+

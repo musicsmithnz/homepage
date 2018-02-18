@@ -1,0 +1,55 @@
+@font-face {
+	font-family: "Voice of the Highlander";
+	src: url('../fonts/Voice of the Highlander.ttf');
+}
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	box-sizing: border-box;
+}
+.inner{
+	background-image: url("../../snow-invert.jpg");
+	width: 100%;
+	height: 100%;
+	display: inline-block;	
+}
+
+.inner > *{
+	display: inline-block;
+	margin: 30px;
+	padding: 30px;
+}
+
+
+h1 { 
+	font-family: "Voice of the Highlander", sans-serif; 
+	font-size: 5em;
+	color: #e5e5e5;
+}
+.left-sidebar{
+	height: 100%;
+	width: 10%;
+}
+.mid-section{
+	width: 15%;
+	height: 100%;
+}
+.content-box{
+	box-sizing: border-box;
+	margin: 4px;
+	padding: 0px;
+	border: 4px #EAEBEC solid;
+	height: 200px;
+	width: 80%;
+	border-radius: 8px;
+	background: #fff;
+	
+}

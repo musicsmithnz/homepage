@@ -1,0 +1,124 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+}
+body {
+        line-height: 1;
+}
+ol, ul {
+        list-style: none;
+}
+blockquote, q {
+        quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+        content: '';
+        content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+        outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+        text-decoration: none;
+}
+del {
+        text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+        border-collapse: collapse;
+        border-spacing: 0;
+}
+
+<!--   
+  src: url(http://www.princexml.com/fonts/larabie/kimberle.ttf) format("truetype");
+-->
+     html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                display: table;
+                background-size: 100%;
+        }
+        .container-fluid {
+                display: table-cell;
+                text-align: center;
+        }
+        .content {
+                position: relative;
+                display: inline-block;
+                text-align: left;
+                top: 200px;
+        }
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	box-sizing: border-box;
+}
+
+#background{
+	background-image: url("../images/linen.jpg");
+<!--
+-->
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#layer {
+	background-color: rgba(248, 247, 216, 0.7);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-color: #ababcc;
+	background-image: -webkit-linear-gradient(left, #121234, #bcbcdd);
+	background-image: linear-gradient(to right,#121234, #bcbcdd);
+}
+
+@font-face {
+	font-family: "Voice of the Highlander";
+	src: url('../fonts/Voice of the Highlander.ttf');
+
+}
+
+h1 { 
+	font-family: "Voice of the Highlander", sans-serif; 
+	font-size: 5em;
+	color: #e5e5e5;
+}
+
+.form-group{
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow: 2px 2px 2px 2px #111;
+	width: 200px;
+}
+iframe{
+	padding: 0px;
+	border: 2px solid #111;
+}
