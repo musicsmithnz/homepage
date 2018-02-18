@@ -1,0 +1,16 @@
+--- 
+nav: 
+  - about
+  - services
+  - contact
+hero:
+  text: Lucent Monkey
+about:
+  text: file(...)
+services:
+  text: file(...)
+contact:
+  text: file(...)
+footer:
+  text: file(...)
+...

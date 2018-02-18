@@ -26,7 +26,8 @@ export class SearchDdg extends PolymerElement {
             }
             input#search {
                 background-color: white;
-                border-radius: 0.2em
+                border-radius: 0.3em 0.3em 0em 0em;
+                padding: .2em .4em;
             }
             form{
                 display: flex;
