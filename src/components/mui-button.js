@@ -15,7 +15,9 @@ export class MuiButton extends PolymerElement {
         <!--END-STYLES-->
 
         <!--TEMPLATE-->
-			<button class="mui-btn">Button</button>
+            <button class="mui-btn">
+                <slot></slot>
+            </button>
 
         <!--END-TEMPLATE-->
 

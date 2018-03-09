@@ -20,7 +20,16 @@ var dropped = function(e){
     } catch(ex){
         id=e.dataTransfer.getData('Text');
     }
-    e.target.insertAdjacentElement('afterend',document.querySelector('#'+id));
+    console.log(e.target)
+    console.log(e.srcElement)
+    console.log(e)
+    var sourceElement=document.querySelector('#'+id);
+    var newElementTag = sourceElement.innerText
+    var newElement = document.createElement(newElementTag)
+    console.log(newElement)
+    //    console.log(copySourceElement.)
+    e.target.insertAdjacentElement('afterend', newElement);
+    //e.target.insertAdjacentElement('afterend', sourceElement);
     e.target.style.boxShadow= "0px 0px rgba(80,80,200,.3)";
   //  }
 };
@@ -37,7 +46,7 @@ var cancel = function(e){
     if (e.stopPropagation) e.stopPropagation();
     return false;
 };
-var container = document.querySelector('#div1');
+//var container = document.querySelector('#div1');
 var targets= document.querySelectorAll('[data-role="drag-drop-target"]');
 
 [].forEach.call(targets, function(target){
@@ -46,6 +55,6 @@ var targets= document.querySelectorAll('[data-role="drag-drop-target"]');
     target.addEventListener('dragover', dragover, false);
     target.addEventListener('dragleave', dragleave, false);
     target.addEventListener('drop', dropped, false);
-    target.setAttribute("draggable","true");
+    target.setAttribute( "draggable", "true");
     target.style.resize="both";
 })
