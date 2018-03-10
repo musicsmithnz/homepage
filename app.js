@@ -15,11 +15,12 @@ app.use(function(req, res, next) {
 });
 app.use('/src', express.static(__dirname+'/src'))
 app.use('/resources', express.static(__dirname+'/resources'))
+app.use('/dist', express.static(__dirname+'/dist'))
 app.use('/node_modules', express.static(__dirname+'/node_modules'))
 
 
 app.get('/', cors(), function (req, res, next) {
-    res.sendFile(path.join(__dirname,'index.html'))
+    res.sendFile(path.join(__dirname,'dist/index.html'))
 })
 
 app.listen(port, function () {

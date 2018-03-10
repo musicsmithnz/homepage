@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"><title>Polymer 3 Homepage</title><meta name="description" content="Polymer 3 Getting started"><script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script><!-- script(type='module', src='../src/components/mui-button.js')--><!-- script(type='module', src='../src/components/lucent-thumbnail.js')--><!-- script(type='module', src='../src/components/search-ddg.js')--><!-- link(rel='stylesheet', href='../node_modules/materialize-css/dist/css/materialize.css')--><!-- script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js')--><style>.column{
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+.row{
+width: 50em;
+}
+   body{
+background: #eaeaea;
+--my-theme-color: #344152;
+--my-light-theme-color: #8491c2;
+}
+.drag{
+background-color: red;
+opacity: 0.25;
+}
+.over{
+background-color: green;
+}</style></head><body><main><paper-button id="b1" data-role="drag-drop-target">paper-button</paper-button><paper-button id="b2" data-role="drag-drop-target">lucent-thumbnail</paper-button><paper-button id="b3" data-role="drag-drop-target">materialize-navbar</paper-button><paper-button id="b4" data-role="drag-drop-target">materialize-footer</paper-button><div class="column"><div class="row" id="div1" ondrop="dropped(event)" ondragover="allowDrop(event)"><lucent-thumbnail class="col s4" id="t1" data-role="drag-drop-target" link="https://www.polymer-project.org">Polymer Project</lucent-thumbnail><lucent-thumbnail class="col s4" id="t2" data-role="drag-drop-target" link="https://www.pluralsight.com">Pluralsight</lucent-thumbnail><lucent-thumbnail class="col s4" id="t3" data-role="drag-drop-target" link="https://www.coursera.org">Coursera</lucent-thumbnail><lucent-thumbnail class="col s4" id="t4" data-role="drag-drop-target" link="https://www.github.com">Github.com</lucent-thumbnail><lucent-thumbnail class="col s4" id="t5" data-role="drag-drop-target" link="https://www.lucentmonkey.com">lucentmonkey.com</lucent-thumbnail><lucent-thumbnail class="col s4" id="t6" data-role="drag-drop-target" link="https://www.binance.com">binance.com</lucent-thumbnail></div><div class="row" id="search-row" data-role="drag-drop-target"><search-ddg></search-ddg></div></div></main><script type="text/javascript" src="app.9d2728c2d236ba1e95d2.js?9d2728c2d236ba1e95d2"></script></body></html>

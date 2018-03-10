@@ -20,13 +20,14 @@ var dropped = function(e){
     } catch(ex){
         id=e.dataTransfer.getData('Text');
     }
-    console.log(e.target)
-    console.log(e.srcElement)
-    console.log(e)
+    //    console.log(e.target)
+    //console.log(e.srcElement)
+    //console.log(e)
     var sourceElement=document.querySelector('#'+id);
     var newElementTag = sourceElement.innerText
     var newElement = document.createElement(newElementTag)
-    console.log(newElement)
+    setProperties(newElement)
+    // console.log(newElement)
     //    console.log(copySourceElement.)
     e.target.insertAdjacentElement('afterend', newElement);
     //e.target.insertAdjacentElement('afterend', sourceElement);
@@ -46,10 +47,7 @@ var cancel = function(e){
     if (e.stopPropagation) e.stopPropagation();
     return false;
 };
-//var container = document.querySelector('#div1');
-var targets= document.querySelectorAll('[data-role="drag-drop-target"]');
-
-[].forEach.call(targets, function(target){
+function setProperties (target){
     target.addEventListener('dragstart', dragStart, false);
     target.addEventListener('dragenter', cancel, false);
     target.addEventListener('dragover', dragover, false);
@@ -57,4 +55,11 @@ var targets= document.querySelectorAll('[data-role="drag-drop-target"]');
     target.addEventListener('drop', dropped, false);
     target.setAttribute( "draggable", "true");
     target.style.resize="both";
+}
+//var container = document.querySelector('#div1');
+var targets= document.querySelectorAll('[data-role="drag-drop-target"]');
+
+[].forEach.call(targets, function(target){
+    setProperties(target)
 })
+

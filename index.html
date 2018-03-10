@@ -9,6 +9,8 @@
         <!--MODULES-->
 		<script type="module" src="src/components/mui-button.js"></script>
         <script type="module" src="src/components/thumbnail-link.js"></script>
+        <script type="module" src="./node_modules/@lucentray/pine-web-components/components/materialize-footer/component.js"></script>
+        <script type="module" src="./node_modules/@lucentray/pine-web-components/components/materialize-navbar/component.js"></script>
         <script type="module" src="src/components/search-ddg.js"></script>
         <!--STYLES-->
         <!--       
@@ -53,8 +55,8 @@
         <main>
                     <mui-button id="b1" data-role="drag-drop-target">mui-button</mui-button>
                     <mui-button id="b2" data-role="drag-drop-target">thumbnail-link</mui-button>
-                    <mui-button id="b3" data-role="drag-drop-target">mui-button</mui-button>
-                    <mui-button id="b4" data-role="drag-drop-target">thumbnail-link</mui-button>
+                    <mui-button id="b3" data-role="drag-drop-target">materialize-navbar</mui-button>
+                    <mui-button id="b4" data-role="drag-drop-target">materialize-footer</mui-button>
             <div class="column">
                 <div class="row" id="div1" ondrop="dropped(event)" ondragover="allowDrop(event)">
                     <thumbnail-link id="t1" class="col s4" data-role="drag-drop-target" link="https://www.polymer-project.org">Polymer Project</thumbnail-link>
